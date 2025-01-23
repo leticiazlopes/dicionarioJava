@@ -10,7 +10,6 @@ public class Dicionario {
     //definição de parâmetro
     //falta colocar o try and catch
     public Dicionario (String idioma){
-        // try {
         this.idioma = idioma;
         try {
             in = new Scanner(new File("csv/" + idioma + ".csv"));
@@ -33,12 +32,14 @@ public class Dicionario {
             String[] linha = line.split(";");
             if (linha[0].equals(termo)) {
                 valor = linha[1];
+                break;
         
-            } else {
+            } 
+            else {
                 valor = "Tradução inexistente";
             }
         }
-        System.out.println(valor);
+    System.out.println(valor);
 
     }
 

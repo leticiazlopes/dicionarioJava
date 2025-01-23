@@ -8,10 +8,10 @@ public class TesteTraduzir {
             Dicionario dicionario = new Dicionario("ingles");
 
             // Testa o método com palavras do arquivo
-            //dicionario.traduzirParaPortugues("computer"); // Esperado: computador
+            dicionario.traduzirParaPortugues("keyboard"); // Esperado: computador
             //dicionario.traduzirParaPortugues("keyboard"); // Esperado: teclado
             // dicionario.traduzirParaPortugues("nonexistent"); // Esperado: erro
 
-            dicionario.traduzirParaIdioma("computor");
+            //dicionario.traduzirParaIdioma("computador");
 
         }}
