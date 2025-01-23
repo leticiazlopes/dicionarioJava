@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Dicionario {
@@ -43,7 +44,7 @@ public class Dicionario {
 
     }
 
-    public void traduzirParaIdioma (String termo) {
+    public void traduzirParaIdioma (String termo) { //void retorna valor
 		this.termo = termo;
         String valor = "";
 
@@ -53,7 +54,7 @@ public class Dicionario {
             String[] linha = line.split(";");
             if (linha[1].equals(termo)) {
                 valor = linha[0];
-                break;
+                break; //encontrou tradução. para
         
             } 
             else {
@@ -63,12 +64,34 @@ public class Dicionario {
         System.out.println(valor);
     }
 
-    public void localizarPalavraIdioma (String termo) {
-		
+    public  ArrayList<String> localizarPalavraIdioma (String termo) {
+        this.termo = termo;
+        ArrayList<String> palavrasParciais = new ArrayList<> ();
+
+        while (in.hasNextLine()) {
+            String line = in.nextLine(); //nextLine retorna str
+            String[] linha = line.split(";");
+            if (linha[0].toLowerCase().startsWith(termo.toLowerCase())) {
+                palavrasParciais.add(linha[0]);
+
+            }    
+        }
+		return palavrasParciais;
     }
 
-    public void localizarPalavraPortugues (String termo) {
-		
+    public ArrayList<String> localizarPalavraPortugues (String termo) {
+		this.termo = termo;
+        ArrayList<String> palavrasParciaisdois = new ArrayList<> ();
+
+        while (in.hasNextLine()) {
+            String line = in.nextLine(); //nextLine retorna str
+            String[] linha = line.split(";");
+            if (linha[1].toLowerCase().startsWith(termo.toLowerCase())) {
+                palavrasParciaisdois.add(linha[1]);
+
+            }    
+        }
+		return palavrasParciaisdois;
     }
 
     public void getIdiomas () {

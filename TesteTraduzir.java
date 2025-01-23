@@ -8,10 +8,15 @@ public class TesteTraduzir {
             Dicionario dicionario = new Dicionario("ingles");
 
             // Testa o método com palavras do arquivo
-            dicionario.traduzirParaPortugues("keyboard"); // Esperado: computador
+            //dicionario.traduzirParaPortugues("computer"); // Esperado: computador
             //dicionario.traduzirParaPortugues("keyboard"); // Esperado: teclado
             // dicionario.traduzirParaPortugues("nonexistent"); // Esperado: erro
 
-            //dicionario.traduzirParaIdioma("computador");
+            //dicionario.traduzirParaIdioma("computador"); //esperado: computer
 
+            //Método de busca parcial para idioma
+            //System.out.println(dicionario.localizarPalavraIdioma("comp")); //espera computer e componentes
+
+            //Método de busca parcial para português
+             System.out.println(dicionario.localizarPalavraPortugues("tec")); //espera teclado
         }}
