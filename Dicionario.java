@@ -13,12 +13,12 @@ public class Dicionario {
     public Dicionario (String idioma){
         this.idioma = idioma;
         try {
-            in = new Scanner(new File("csv/" + idioma + ".csv"));
+            in = new Scanner(new File("csv/" + idioma + ".csv")); //abre com base no nome do idoma 
             System.out.println("Dicionário do idioma " + idioma + " está disponível");
 
         } 
         catch (FileNotFoundException ex) {
-            System.out.println("Arquivo não encontrado!" );
+            System.out.println("Arquivo não encontrado. Esse idioma não é suportado" );
 
             }
     }   
@@ -105,8 +105,11 @@ public class Dicionario {
 		
     }
 
-    public void setIdioma (String idioma) {
-		    //falta colocar o try and catch
+    public void setIdioma (String idiomadesejado) throws Exception { //contains() verifica se está ou não
+        if (!getIdiomas().contains(idiomadesejado)) {
+             throw new Exception("Esse idioma não está disponível"); //se if falso, lança exception. 
+        }
+		this.idioma=idiomadesejado;
 
     };
 
