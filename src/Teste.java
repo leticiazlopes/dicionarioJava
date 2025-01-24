@@ -7,7 +7,7 @@ public class Teste {
             // Scanner scanner = new Scanner(new File("src/csv/ingles.csv"));
 
             // Instancia a classe Dicionario
-            //Dicionario dicionario = new Dicionario("ingles");
+            Dicionario dicionario = new Dicionario("ingles");
 
             // Testa o método com palavras do arquivo
             //System.out.println(dicionario.traduzirParaPortugues("computer")); // Esperado: computador
@@ -23,7 +23,7 @@ public class Teste {
             //System.out.println(dicionario.localizarPalavraPortugues("tec")); //espera teclado
 
             //testando getIdioma()
-            //System.out.println(dicionario.getIdiomas()); //chama lista e dps imprime
+            System.out.println(dicionario.getIdiomas()); //chama lista e dps imprime
             //System.out.println("Os idiomas disponíveis são: " + idiomas);
 
             //testando setIdioma(). para capturar a excessão usa try e catch

@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Dicionario {
@@ -88,11 +89,11 @@ public class Dicionario {
     }
 
     public ArrayList<String> getIdiomas () {
-        ArrayList<String> idiomas = new ArrayList<>(); //inicar a lista de idiomas permitidos vazia
+        ArrayList<String> idiomas = new ArrayList<> (List.of("ingles", "espanhol", "frances")); //inicar a lista de idiomas permitidos vazia
         //add idiomas suportaveis
-        idiomas.add("ingles");
-        idiomas.add("espanhol");
-        idiomas.add("frances");
+        // idiomas.add[];
+        // idiomas.add("espanhol");
+        // idiomas.add("frances");
 
         return idiomas;
 		
