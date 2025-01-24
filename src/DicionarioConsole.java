@@ -11,15 +11,28 @@ public class DicionarioConsole {
         System.out.println("ingles");
         System.out.println("espanhol");
         System.out.println("frances");
+        System.out.println("sair");
+
 
         valor = teclado.nextLine();
         System.out.println(valor);
         dicionario1 = new Dicionario(valor);
 
-        try {
+        
+            System.out.println("Digite a palavra:");
+            String palavra = teclado.nextLine();
+            if (valor == null){
+                System.out.println(dicionario1.traduzirParaIdioma(palavra));
+                
+    
+            }
             
-        } catch (Exception e) {
-        }
+            else {
+                System.out.println(dicionario1.traduzirParaPortugues(palavra));
+            
+
+        } 
+    
             
         
         }
