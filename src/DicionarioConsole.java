@@ -21,10 +21,11 @@ public class DicionarioConsole {
         
             System.out.println("Digite a palavra:");
             String palavra = teclado.nextLine();
-            if (valor == null){
+            if (palavra == null){
                 System.out.println(dicionario1.traduzirParaIdioma(palavra));
                 
     
+            
             }
             
             else {
