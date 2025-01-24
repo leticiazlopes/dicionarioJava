@@ -44,7 +44,7 @@ public class Dicionario {
 
     }
 
-    public void traduzirParaIdioma (String termo) { //void retorna valor
+    public void traduzirParaIdioma (String termo) { //void não retorna valor, apenas imprime
 		this.termo = termo;
         String valor = "";
 
@@ -64,7 +64,7 @@ public class Dicionario {
         System.out.println(valor);
     }
 
-    public  ArrayList<String> localizarPalavraIdioma (String termo) {
+    public  ArrayList<String> localizarPalavraIdioma (String termo) { //array pq retorna lista. compatível com o return. 
         this.termo = termo;
         ArrayList<String> palavrasParciais = new ArrayList<> ();
 
@@ -94,7 +94,14 @@ public class Dicionario {
 		return palavrasParciaisdois;
     }
 
-    public void getIdiomas () {
+    public ArrayList<String>  getIdiomas () {
+        ArrayList<String> idiomas = new ArrayList<>(); //inicar a lista de idiomas permitidos vazia
+        //add idiomas suportaveis
+        idiomas.add("inglês");
+        idiomas.add("espanhol");
+        idiomas.add("francês");
+
+        return idiomas;
 		
     }
 

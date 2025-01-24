@@ -1,4 +1,6 @@
 
+
+
 public class TesteTraduzir {
     public static void main(String[] args) {
             // Configura o Scanner para ler o arquivo ingles.csv
@@ -18,5 +20,9 @@ public class TesteTraduzir {
             //System.out.println(dicionario.localizarPalavraIdioma("comp")); //espera computer e componentes
 
             //Método de busca parcial para português
-             System.out.println(dicionario.localizarPalavraPortugues("tec")); //espera teclado
+            System.out.println(dicionario.localizarPalavraPortugues("tec")); //espera teclado
+
+             //testando getIdioma()
+             //ArrayList<String> idiomas =dicionario.getIdiomas(); //chama lista e dps imprime
+             //System.out.println("Os idiomas disponíveis são: " + idiomas);
         }}
