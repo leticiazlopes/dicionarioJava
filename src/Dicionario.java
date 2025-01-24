@@ -13,58 +13,51 @@ public class Dicionario {
     public Dicionario (String idioma){
         this.idioma = idioma;
         try {
-            in = new Scanner(new File("csv/" + idioma + ".csv")); //abre com base no nome do idoma 
+            in = new Scanner(new File("dados/" + idioma + ".csv")); //abre com base no nome do idoma 
             System.out.println("Dicionário do idioma " + idioma + " está disponível");
-
         } 
         catch (FileNotFoundException ex) {
-            System.out.println("Arquivo não encontrado. Esse idioma não é suportado" );
+            System.out.println("Arquivo não encontrado. Esse idioma não é suportado." );
 
             }
     }   
 
-    public void traduzirParaPortugues (String termo) {
+    public ArrayList <String> traduzirParaPortugues (String termo) {
         this.termo = termo;
-        String valor = "";
+        ArrayList<String> valor  = new ArrayList<>();
 
         //falta colocar exceção aqui
         while (in.hasNextLine()) {
             String line = in.nextLine();
             String[] linha = line.split(";");
             if (linha[0].equals(termo)) {
-                valor = linha[1];
+                valor.add(linha[1]);
                 break;
         
             } 
-            else {
-                valor = "Tradução inexistente";
-            }
         }
-    System.out.println(valor);
-
+        return valor;
     }
 
-    public void traduzirParaIdioma (String termo) { //void não retorna valor, apenas imprime
+    public ArrayList <String> traduzirParaIdioma (String termo) { //void não retorna valor, apenas imprime
 		this.termo = termo;
-        String valor = "";
+        ArrayList<String> valor  = new ArrayList<>();
 
         //falta colocar exceção aqui
         while (in.hasNextLine()) {
             String line = in.nextLine();
             String[] linha = line.split(";");
             if (linha[1].equals(termo)) {
-                valor = linha[0];
+                valor.add(linha[0]);
                 break; //encontrou tradução. para
         
             } 
-            else {
-                valor = "Tradução inexistente";
-            }
+            
         }
-        System.out.println(valor);
+        return valor;
     }
 
-    public  ArrayList<String> localizarPalavraIdioma (String termo) { //array pq retorna lista. compatível com o return. 
+    public ArrayList<String> localizarPalavraIdioma (String termo) { //array pq retorna lista. compatível com o return. 
         this.termo = termo;
         ArrayList<String> palavrasParciais = new ArrayList<> ();
 
@@ -94,12 +87,12 @@ public class Dicionario {
 		return palavrasParciaisdois;
     }
 
-    public ArrayList<String>  getIdiomas () {
+    public ArrayList<String> getIdiomas () {
         ArrayList<String> idiomas = new ArrayList<>(); //inicar a lista de idiomas permitidos vazia
         //add idiomas suportaveis
-        idiomas.add("inglês");
+        idiomas.add("ingles");
         idiomas.add("espanhol");
-        idiomas.add("francês");
+        idiomas.add("frances");
 
         return idiomas;
 		
